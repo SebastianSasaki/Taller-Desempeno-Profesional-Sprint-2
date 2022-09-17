@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tdp_sprint_2/routes/routes.dart';
+import 'package:tdp2/routes/routes.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  //const MyApp({super.key});
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

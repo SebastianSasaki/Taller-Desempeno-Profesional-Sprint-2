@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:tdp_sprint_2/ui/pages/login_page.dart';
+import 'package:tdp2/ui/pages/login_page.dart';
 
 class RecoverPassword2 extends StatefulWidget {
   const RecoverPassword2({Key? key}) : super(key: key);
@@ -40,10 +40,12 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                   color: Colors.transparent,
                   elevation: 0,
                   margin: const EdgeInsets.only(
-                      left: 10, right: 10, top: 260, bottom: 20),
+                      left: 10, right: 10, top: 260, bottom: 20
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 35, vertical: 20),
+                        horizontal: 35, vertical: 20
+                    ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -57,6 +59,7 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                         ),
                         Text(
                           'Recuperación de Contraseña',
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.montserrat(
                               fontSize: 30,
                               fontWeight: FontWeight.w600,
@@ -73,10 +76,7 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          style: GoogleFonts.montserrat(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.w400),
                         ),
                         const SizedBox(
                           height: 20,
@@ -89,10 +89,7 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                               borderRadius: BorderRadius.circular(20),
                             ),
                           ),
-                          style: GoogleFonts.montserrat(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400,
-                          ),
+                          style: GoogleFonts.montserrat(fontSize: 20, fontWeight: FontWeight.w400,),
                           obscureText: true,
                         ),
                         const SizedBox(
@@ -103,15 +100,13 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                           onPressed: () => _showLogin(context),
                           child: Text(
                             'Confirmar',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: GoogleFonts.montserrat(fontSize: 15, fontWeight: FontWeight.w600,),
                           ),
                           style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20)),
-                              onPrimary: Colors.white,
+                                  borderRadius: BorderRadius.circular(20)
+                              ),
+                              foregroundColor: Colors.white,
                               fixedSize: const Size(160, 56),
                               padding:
                               const EdgeInsets.symmetric(vertical: 17)),
