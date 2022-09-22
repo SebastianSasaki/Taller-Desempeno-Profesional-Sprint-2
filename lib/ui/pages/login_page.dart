@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tdp2/models/police.dart';
 import 'package:tdp2/ui/pages/register_page.dart';
 import 'package:tdp2/ui/pages/recover_password_page.dart';
-import 'package:tdp2/services/mini-storage.dart' as storage;
+//import 'package:tdp2/services/mini-storage.dart' as storage;
 
 import '../../services/polices-api.services.dart';
 import 'home_page.dart';
@@ -37,18 +37,20 @@ class _LoginPageState extends State<LoginPage> {
                   child: Card(
                     color: Colors.transparent,
                     elevation: 0,
-                    margin: const EdgeInsets.only(
-                        left: 10, right: 10, top: 260, bottom: 20),
+                    margin: const EdgeInsets.only(left: 10, right: 10, top: 160, bottom: 20),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 35, vertical: 20),
+                      padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 20),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Image.asset(
-                            'assets/logo.PNG',
-                            fit: BoxFit.cover,
-                            width: double.infinity,
+                          SizedBox(
+                            height: 80,
+                            width: 80,
+                            child: Image.asset(
+                              'assets/logo.PNG',
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
                           ),
                           const SizedBox(
                             height: 50,
@@ -123,7 +125,14 @@ class _LoginPageState extends State<LoginPage> {
                             height: 30,
                           ),
                           ElevatedButton(
-                            onPressed: () => _login(context),
+                            onPressed: () => _showHome(context),
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                foregroundColor: Colors.redAccent,
+                                backgroundColor: Colors.redAccent,
+                                fixedSize: const Size(160, 56),
+                                padding: const EdgeInsets.symmetric(vertical: 17)),
                             child: Text(
                               'Iniciar Sesión',
                               style: GoogleFonts.montserrat(
@@ -132,13 +141,6 @@ class _LoginPageState extends State<LoginPage> {
                                   color: Colors.white
                               ),
                             ),
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20)),
-                                foregroundColor: Colors.redAccent,
-                                backgroundColor: Colors.redAccent,
-                                fixedSize: const Size(160, 56),
-                                padding: const EdgeInsets.symmetric(vertical: 17)),
                           ),
                           const SizedBox(
                             height: 20,
@@ -146,6 +148,10 @@ class _LoginPageState extends State<LoginPage> {
                           Align(
                             alignment: Alignment.center,
                             child: TextButton(
+                              onPressed: () => _showRecoverPassword(context),
+                              style: TextButton.styleFrom(
+                                foregroundColor: Theme.of(context).primaryColor,
+                              ),
                               child: Text(
                                 '¿Olvidaste tu contraseña?',
                                 style: GoogleFonts.montserrat(
@@ -153,10 +159,6 @@ class _LoginPageState extends State<LoginPage> {
                                   fontWeight: FontWeight.w400,
                                   color: Colors.grey,
                                 ),
-                              ),
-                              onPressed: () => _showRecoverPassword(context),
-                              style: TextButton.styleFrom(
-                                foregroundColor: Theme.of(context).primaryColor,
                               ),
                             ),
                           ),
@@ -167,6 +169,11 @@ class _LoginPageState extends State<LoginPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               TextButton(
+                                onPressed: () => _showRegister(context),
+                                style: TextButton.styleFrom(
+                                  // Text color
+                                  foregroundColor: Theme.of(context).primaryColor,
+                                ),
                                 child: Text(
                                   'Regístrate',
                                   style: GoogleFonts.montserrat(
@@ -174,11 +181,6 @@ class _LoginPageState extends State<LoginPage> {
                                       fontWeight: FontWeight.w600,
                                       color: Colors.redAccent
                                   ),
-                                ),
-                                onPressed: () => _showRegister(context),
-                                style: TextButton.styleFrom(
-                                  // Text color
-                                  foregroundColor: Theme.of(context).primaryColor,
                                 ),
                               )
                             ],
@@ -214,9 +216,9 @@ class _LoginPageState extends State<LoginPage> {
                 width: 100,
               ),
               SizedBox(
-                child: CircularProgressIndicator(),
                 width: 20,
                 height: 20,
+                child: CircularProgressIndicator(),
               ),
             ],
           ),
@@ -244,5 +246,9 @@ class _LoginPageState extends State<LoginPage> {
 
   _showRecoverPassword(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecoverPassword()));
+  }
+
+  _showHome(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomePage()));
   }
 }

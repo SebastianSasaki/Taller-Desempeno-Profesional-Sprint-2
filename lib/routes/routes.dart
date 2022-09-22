@@ -6,7 +6,8 @@ import 'package:tdp2/ui/pages/recover_password_page_2.dart';
 import 'package:tdp2/ui/pages/choose_district_zone_page.dart';
 import 'package:tdp2/ui/pages/warnings_page.dart';
 import 'package:tdp2/ui/pages/change_district_zone_page.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:tdp2/ui/pages/make_reports_page.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -19,8 +20,10 @@ class AppRoutes {
     'recoverPassword2': (BuildContext context) => const RecoverPassword2(),
     'changeZone': (BuildContext context) => const ChangeDistrictZonePage(),
     'chooseZone': (BuildContext context) => const ChooseDistrictZonePage(),
-    'warning' : (BuildContext context) => const WarningPage()
+    'warning' : (BuildContext context) => const WarningPage(),
+    'makeReport' : (BuildContext context) => const MakeReportPage()
   };
+
   static onGeneratedRoute(RouteSettings settings) {
     return MaterialPageRoute(builder: (context) => const LoginPage());
   }

@@ -13,10 +13,14 @@ class UpperBar extends StatelessWidget with PreferredSizeWidget {
           leading: null,
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Image.asset(
-            'assets/logo.PNG',
-            fit: BoxFit.cover,
-            width: double.infinity,
+          title: SizedBox(
+            height: 40,
+            width: 40,
+            child: Image.asset(
+              'assets/logo.PNG',
+              fit: BoxFit.cover,
+              width: double.infinity,
+            ),
           ),
           automaticallyImplyLeading: false,
           actions: [

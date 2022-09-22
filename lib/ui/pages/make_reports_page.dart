@@ -5,14 +5,14 @@ import 'package:tdp2/ui/widgets/UpperBar.dart';
 
 import 'home_page.dart';
 
-class ChangeDistrictZonePage extends StatefulWidget {
-  const ChangeDistrictZonePage({Key? key}): super(key:key);
+class MakeReportPage extends StatefulWidget {
+  const MakeReportPage({Key? key}): super(key:key);
 
   @override
-  State<ChangeDistrictZonePage> createState() => _ChangeDistrictZonePageState();
+  State<MakeReportPage> createState() => _MakeReportPageState();
 }
 
-class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
+class _MakeReportPageState extends State<MakeReportPage> {
   String dropdownValue = 'San Isidro';
   String dropdownValue2 = 'Zona 1';
   List<String> districts = ['San Isidro', 'Lince', 'Miraflores', 'San Borja', 'Surco'];
@@ -52,8 +52,7 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                             ),
                           ),
                           Text(
-                            'Cambiar Zona de Vigilancia',
-                            textAlign: TextAlign.center,
+                            'Hacer Reporte',
                             style: GoogleFonts.montserrat(
                                 fontSize: 30,
                                 fontWeight: FontWeight.w600,
@@ -65,17 +64,24 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge un distrito',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 2),),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 2),),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
                             dropdownColor: Colors.white,
                             value: dropdownValue,
                             onChanged: (String? newValue) {
-                              setState(() { dropdownValue = newValue!; });
+                              setState(() {
+                                dropdownValue = newValue!;
+                              });
                             },
-                            items: districts.map<DropdownMenuItem<String>>((String value) {
+                            items: districts.map<DropdownMenuItem<String>>((
+                                String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(
@@ -91,17 +97,24 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge una zona',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 2),),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.black, width: 2),),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
                             dropdownColor: Colors.white,
                             value: dropdownValue2,
                             onChanged: (String? newValue) {
-                              setState(() { dropdownValue2 = newValue!; });
+                              setState(() {
+                                dropdownValue2 = newValue!;
+                              });
                             },
-                            items: zones.map<DropdownMenuItem<String>>((String value) {
+                            items: zones.map<DropdownMenuItem<String>>((
+                                String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(
@@ -115,19 +128,19 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                             height: 30,
                           ),
                           ElevatedButton(
-                            onPressed: () => _changeDistrictAndZone(context),
+                            onPressed: () => _makeReport(context),
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20)),
                                 foregroundColor: Colors.redAccent,
                                 backgroundColor: Colors.redAccent,
-                                fixedSize: const Size(180, 60),
-                                padding: const EdgeInsets.symmetric(vertical: 17)),
+                                fixedSize: const Size(160, 56),
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 17)),
                             child: Text(
-                              'Seleccionar Distrito y Zona',
-                              textAlign: TextAlign.center,
+                              'Ver Reportes',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 20,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white
                               ),
@@ -146,7 +159,7 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
     );
   }
 
-  _changeDistrictAndZone(BuildContext context) {
+  _makeReport(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => HomePage()));
   }

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tdp2/ui/pages/recover_password_page_2.dart';
 //import 'package:tdp2/models/police.dart';
 
 //import 'package:tdp2/ui/pages/recover_password_page_2.dart';
@@ -45,16 +46,20 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                   child: Card(
                     color: Colors.transparent,
                     elevation: 0,
-                    margin: const EdgeInsets.only( left: 10, right: 10, top: 260, bottom: 20),
+                    margin: const EdgeInsets.only( left: 10, right: 10, top: 170, bottom: 20),
                     child: Padding(
                       padding: const EdgeInsets.symmetric( horizontal: 35, vertical: 20),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Image.asset(
-                            'assets/logo.PNG',
-                            fit: BoxFit.cover,
-                            width: double.infinity,
+                          SizedBox(
+                            height: 80,
+                            width: 80,
+                            child: Image.asset(
+                              'assets/logo.PNG',
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
                           ),
                           const SizedBox(
                             height: 40,
@@ -99,9 +104,7 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                           const SizedBox( height: 50, ),
                           ElevatedButton(
                             // funcion de cambio de contraseña
-                            onPressed: () async {
-
-                            },
+                            onPressed: () => _showRecoverPassword2(context),
                             child: Text(
                               'Confirmar',
                               style: GoogleFonts.montserrat(
@@ -113,6 +116,7 @@ class _RecoverPasswordState extends State<RecoverPassword> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20)),
                                 foregroundColor: Colors.white,
+                                backgroundColor: Colors.redAccent,
                                 fixedSize: const Size(160, 56),
                                 padding:
                                 const EdgeInsets.symmetric(vertical: 17)),
@@ -134,7 +138,7 @@ class _RecoverPasswordState extends State<RecoverPassword> {
     ///final Police policemail = Police(policemail: _emailController);
   ///}
 
-  ///_showRecoverPassword2(BuildContext context) {
-    ///Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecoverPassword2()));
-  ///}
+  _showRecoverPassword2(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecoverPassword2()));
+  }
 }

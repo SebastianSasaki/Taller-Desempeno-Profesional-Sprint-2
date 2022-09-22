@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 class Police {
+  int? id;
   String? policename;
   String? policelastname;
   String? password;

@@ -40,7 +40,7 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                   color: Colors.transparent,
                   elevation: 0,
                   margin: const EdgeInsets.only(
-                      left: 10, right: 10, top: 260, bottom: 20
+                      left: 10, right: 10, top: 180, bottom: 20
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -49,10 +49,14 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Image.asset(
-                          'assets/logo.PNG',
-                          fit: BoxFit.cover,
-                          width: double.infinity,
+                        SizedBox(
+                          height: 80,
+                          width: 80,
+                          child: Image.asset(
+                            'assets/logo.PNG',
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                          ),
                         ),
                         const SizedBox(
                           height: 40,
@@ -106,6 +110,7 @@ class _RecoverPassword2State extends State<RecoverPassword2> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)
                               ),
+                              backgroundColor: Colors.redAccent,
                               foregroundColor: Colors.white,
                               fixedSize: const Size(160, 56),
                               padding:

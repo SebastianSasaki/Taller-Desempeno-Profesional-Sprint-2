@@ -38,7 +38,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   color: Colors.transparent,
                   elevation: 0,
                   margin: const EdgeInsets.only(
-                      left: 10, right: 10, top: 260, bottom: 20),
+                      left: 10, right: 10, top: 180, bottom: 20),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 35, vertical: 20),
@@ -47,10 +47,14 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Image.asset(
-                            'assets/logo.PNG',
-                            fit: BoxFit.cover,
-                            width: double.infinity,
+                          SizedBox(
+                            height: 80,
+                            width: 80,
+                            child: Image.asset(
+                              'assets/logo.PNG',
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
                           ),
                           const SizedBox( height: 40, ),
                           Text(
@@ -152,6 +156,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20)),
                               foregroundColor: Colors.redAccent,
+                              backgroundColor: Colors.redAccent,
                               fixedSize: const Size(160, 56),
                               padding:
                               const EdgeInsets.symmetric(vertical: 17)),
