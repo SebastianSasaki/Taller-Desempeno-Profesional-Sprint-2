@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tdp2/ui/pages/login_page.dart';
 import 'package:tdp2/services/mini-storage.dart' as storage;
 
+import '../pages/home_page.dart';
+
 
 class UpperBar extends StatelessWidget with PreferredSizeWidget {
   UpperBar({Key? key}) : super(key: key);
@@ -27,11 +29,25 @@ class UpperBar extends StatelessWidget with PreferredSizeWidget {
             Builder(
               builder: (context) {
                 return Container(
+                  padding: EdgeInsets.all(10),
+                  child: GestureDetector(
+                    onTap: () => _showHome(context),
+                    child: const ClipOval(child: Icon(
+                      Icons.account_balance_sharp,
+                      color: Colors.redAccent,
+                    )
+                    ),
+                  ),
+                );
+              },
+            ),
+            Builder(
+              builder: (context) {
+                return Container(
                   padding: EdgeInsets.all(7),
                   child: GestureDetector(
                     onTap: () => _logout(context),
-                    child: ClipOval(
-                        child: Icon(
+                    child: const ClipOval(child: Icon(
                             Icons.power_settings_new_outlined,
                             color: Colors.red,
                         )
@@ -48,6 +64,10 @@ class UpperBar extends StatelessWidget with PreferredSizeWidget {
   Future<void> _logout(BuildContext context) async {
     await storage.deleteAllAsync();
     Navigator.of(context).push( MaterialPageRoute(builder: (context) => LoginPage()) );
+  }
+
+  _showHome(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
   }
 
   @override

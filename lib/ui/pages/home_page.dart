@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tdp2/ui/pages/make_reports_page.dart';
+import 'package:tdp2/ui/pages/report_failures_page.dart';
 import 'package:tdp2/ui/widgets/UpperBar.dart';
 import 'package:tdp2/ui/pages/change_district_zone_page.dart';
 import 'package:tdp2/ui/pages/warnings_page.dart';
@@ -34,7 +36,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
             ElevatedButton(
-              onPressed: () => null,
+              onPressed: () => _showMakeReports(context),
               style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                   backgroundColor: Colors.redAccent, fixedSize: const Size(160, 56), padding: const EdgeInsets.symmetric(vertical: 17)),
               child: Text(
@@ -54,7 +56,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               ),
             ),
             ElevatedButton(
-              onPressed: () => null,
+              onPressed: () => _showReportFailure(context),
               style: ElevatedButton.styleFrom(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                   backgroundColor: Colors.redAccent, fixedSize: const Size(160, 56), padding: const EdgeInsets.symmetric(vertical: 17)),
               child: Text(
@@ -70,10 +72,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 
   _showChangeDistrictAndZone(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ChangeDistrictZonePage()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeDistrictZonePage()));
   }
 
   _warnings(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => WarningPage()));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const WarningPage()));
+  }
+
+  _showMakeReports(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MakeReportPage()));
+  }
+
+  _showReportFailure(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ReportFailurePage()));
   }
 }

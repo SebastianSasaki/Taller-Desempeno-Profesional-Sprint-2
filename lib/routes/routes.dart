@@ -4,10 +4,11 @@ import 'package:tdp2/ui/pages/register_page.dart';
 import 'package:tdp2/ui/pages/recover_password_page.dart';
 import 'package:tdp2/ui/pages/recover_password_page_2.dart';
 import 'package:tdp2/ui/pages/choose_district_zone_page.dart';
+import 'package:tdp2/ui/pages/report_failures_page.dart';
+import 'package:tdp2/ui/pages/view_reports_page.dart';
 import 'package:tdp2/ui/pages/warnings_page.dart';
 import 'package:tdp2/ui/pages/change_district_zone_page.dart';
 import 'package:tdp2/ui/pages/make_reports_page.dart';
-//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -21,7 +22,9 @@ class AppRoutes {
     'changeZone': (BuildContext context) => const ChangeDistrictZonePage(),
     'chooseZone': (BuildContext context) => const ChooseDistrictZonePage(),
     'warning' : (BuildContext context) => const WarningPage(),
-    'makeReport' : (BuildContext context) => const MakeReportPage()
+    'makeReport' : (BuildContext context) => const MakeReportPage(),
+    'reportFailure' : (BuildContext context) => const ReportFailurePage(),
+    'viewReport' : (BuildContext context) => const ViewReportsPage(),
   };
 
   static onGeneratedRoute(RouteSettings settings) {

@@ -4,6 +4,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tdp2/models/police.dart';
+import 'package:tdp2/ui/pages/choose_district_zone_page.dart';
 import 'package:tdp2/ui/pages/register_page.dart';
 import 'package:tdp2/ui/pages/recover_password_page.dart';
 //import 'package:tdp2/services/mini-storage.dart' as storage;
@@ -125,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                             height: 30,
                           ),
                           ElevatedButton(
-                            onPressed: () => _showHome(context),
+                            onPressed: () => _chooseDistrictAndZone(context),
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20)),
@@ -248,7 +249,7 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RecoverPassword()));
   }
 
-  _showHome(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HomePage()));
+  _chooseDistrictAndZone(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChooseDistrictZonePage()));
   }
 }

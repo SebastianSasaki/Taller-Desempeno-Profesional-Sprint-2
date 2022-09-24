@@ -50,6 +50,7 @@ class _ChooseDistrictZonePageState extends State<ChooseDistrictZonePage> {
                               width: double.infinity,
                             ),
                           ),
+                          const SizedBox( height: 40, ),
                           Text(
                             'Configurar Alertas',
                             style: GoogleFonts.montserrat(
@@ -57,14 +58,12 @@ class _ChooseDistrictZonePageState extends State<ChooseDistrictZonePage> {
                                 fontWeight: FontWeight.w600,
                                 color: Colors.redAccent),
                           ),
-                          const SizedBox(
-                            height: 40,
-                          ),
+                          const SizedBox( height: 40, ),
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge un distrito',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
@@ -89,8 +88,8 @@ class _ChooseDistrictZonePageState extends State<ChooseDistrictZonePage> {
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge una zona',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
@@ -119,8 +118,8 @@ class _ChooseDistrictZonePageState extends State<ChooseDistrictZonePage> {
                                     borderRadius: BorderRadius.circular(20)),
                                 foregroundColor: Colors.redAccent,
                                 backgroundColor: Colors.redAccent,
-                                fixedSize: const Size(160, 56),
-                                padding: const EdgeInsets.symmetric(vertical: 17)),
+                                fixedSize: const Size(250, 60),
+                                padding: const EdgeInsets.symmetric(vertical: 20)),
                             child: Text(
                               'Seleccionar Distrito y Zona',
                               style: GoogleFonts.montserrat(

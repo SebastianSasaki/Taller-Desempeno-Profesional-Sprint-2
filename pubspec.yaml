@@ -45,6 +45,8 @@ dependencies:
   flutter_secure_storage:
   flutter_native_splash:
   shared_preferences:
+  table_calendar: ^3.0.7
+
 
 dev_dependencies:
   flutter_test:

@@ -65,8 +65,8 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge un distrito',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
@@ -91,8 +91,8 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                           DropdownButtonFormField(
                             decoration: const InputDecoration(
                               labelText: 'Escoge una zona',
-                              enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
-                              focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //enabledBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
+                              //focusedBorder: OutlineInputBorder( borderSide: BorderSide(color: Colors.black, width: 2), ),
                               filled: true,
                               fillColor: Colors.redAccent,
                             ),
@@ -121,7 +121,7 @@ class _ChangeDistrictZonePageState extends State<ChangeDistrictZonePage> {
                                     borderRadius: BorderRadius.circular(20)),
                                 foregroundColor: Colors.redAccent,
                                 backgroundColor: Colors.redAccent,
-                                fixedSize: const Size(180, 60),
+                                fixedSize: const Size(250, 60),
                                 padding: const EdgeInsets.symmetric(vertical: 17)),
                             child: Text(
                               'Seleccionar Distrito y Zona',
